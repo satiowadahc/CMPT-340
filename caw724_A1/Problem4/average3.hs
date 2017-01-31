@@ -21,8 +21,10 @@ orderTriple (m,n,o)  =  if (m<=ave && n==ave && o>ave) then (m,n,o)
                                 else if (m<=ave && n>ave && o==ave) then (m,o,n)
                                         else if (m>ave && n==ave && o<=ave) then (o,n,m)
                                                 else if (m==ave && n>ave && o<=ave) then (o,m,n)
-                                                        else if (m>=ave && n>ave && o<=ave) then (n,o,m)  
-                                                                else if (m==ave && n<=ave && o>ave) then (n,m,o) else (0,0,0)
+                                                        else if (m>=ave && n<ave && o<=ave) then (n,o,m)  
+                                                                else if (m==ave && n<=ave && o>ave) then (n,m,o) 
+                                                                        else if m==n && n==o then (m,n,o)
+                                                                                else (0,0,0)
                                                                         where ave = average3 m n o
 
 

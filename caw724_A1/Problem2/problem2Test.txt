@@ -1,0 +1,27 @@
+Prelude> :load "fastexp1.hs"
+[1 of 1] Compiling Main             ( fastexp1.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> fastExp1 (2,1)
+2
+*Main> fastExp1 (2,0)
+1
+*Main> fastExp1 (2,-1)
+0
+*Main> fastExp1 (2,4)
+16
+*Main> fastExp2 (2,1)
+2
+*Main> fastExp2 (2,0)
+1
+*Main> fastExp2 (2,3)
+8
+*Main> fastExp2 (2,6)
+64
+*Main> fastExp3 (2,1)
+2
+*Main> fastExp3 (2,0)
+1
+*Main> fastExp3 (2,3)
+8
+*Main> fastExp3 (2,6)
+64
