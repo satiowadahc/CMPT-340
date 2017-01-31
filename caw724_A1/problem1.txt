@@ -1,0 +1,18 @@
+CMPT 340
+A1
+Chad A. Woitas
+Jan 31
+
+
+1A)
+swap :: (Integer,Integer) -> (Integer,Integer)
+
+1B)
+pair :: Integer -> Integer -> (Integer,Integer)
+
+1C)
+double :: Integer -> Integer
+
+1D)
+twice :: Integer->Integer->Integer
+
