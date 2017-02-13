@@ -1,0 +1,33 @@
+--CMPT 340
+--Chad A. Woitas
+--Assignment 2
+--Professor Jamali
+--Feb 14
+
+{-
+Question 1)
+and true (not true)
+\v.\w.(v w v) true (not true)
+\w.(true w true)(not true)
+true (not true) 
+\.x\.y (y) (not true)
+\.y (y) (not true)
+not true
+\.v\.w\.x (v x w) true
+\.w\.x (true x w)
+\.w\.x ((\.a\.b(a)) x w)
+\.w\.x ((\.b(x)) w)
+\.w\.x (x)
+\.x\.y (y)
+false
+-}
+
+--Question 2)
+curry :: ((a,b)->c) -> ((a->b)->c)
+curry f (a,b) -> f a b
+
+uncurry :: ((a->b)->c) -> ((a,b)->c)
+uncurry f a b = g (a,b)
+
+
+
