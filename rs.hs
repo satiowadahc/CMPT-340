@@ -22,6 +22,24 @@ not true
 false
 -}
 
+--Test Files
+-- Adds two integers for testing uncurry
+add :: Integer -> Integer -> Integer
+add x y =
+    x + y
+
+-- Subtracts two integers for testing curry
+sub :: (Integer,Integer) -> Integer
+sub (x,y)=
+    x - y
+
+list1 = [1,2,3,4,5,6]
+list2 = [10,11,12,13,14,15]
+listd = ['a','b','c','d']
+
+
+--End Test Files
+
 --Question 2)
 curry :: ((a,b)->c) -> (a->b->c)
 curry f a b = f (a,b)
@@ -112,17 +130,39 @@ myFloatLess (MyFloat(exp1,man1)) (MyFloat(exp2,man2)) =
 
 
 --Question 4)
-
 shuffle :: [a]->[a]->[a]
+shuffle l1 [] = l1
+shuffle [] l2 = l2
 shuffle l1 l2 = (head l1):(head l2):l3
         where l3 = (shuffle (drop 1 l1) (drop 1 l2))
 
+ 
 --Question 5)
 
-split :: [a]->Integer->[a]->[a]
-split l1 n = l2, l3
+split :: [a]->Int->([a],[a])
+split l1 0 = (l1,[])
+split (x:xs) n = (take n (x:xs),reverse(take (length(x:xs)-n) (reverse (x:xs))))
 
 
+--Question 6)
+
+nshuffle :: Int->Int->[Char]
+nshuffle c n = shuffleN list n where
+        list = make 'b' c ++ make 'r' c
+--        pairs = split list (length(list) `div` 2)
+
+make :: Char -> Int-> [Char]
+make c 0 = []
+make c l = c:(make c (l-1))
+
+shuffleN :: [a]->Int-> [a]
+shuffleN l1 0  = l1
+shuffleN l1 n = shuffleN (Main.uncurry shuffle pair) (n-1) where
+        pair = split l1 (length(l1) `div` 2)
 
 
+--Question 7)
+-- consecutive:: [Char]->Int
+-- consecutive l1 = counter where
+        -- counter = 
 
