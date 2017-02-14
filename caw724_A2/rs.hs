@@ -39,10 +39,13 @@ data MyFloat = MyFloat(Mantissa,Exponent)
 instance Show MyFloat where
         show (MyFloat(a,b)) = "0." ++ show(a) ++ "x10^" ++ show(b)
 
---recursive call it - add to a list for b count
+--todo recursive call it - add to a list for b count
 -- whole :: MyFloat->Integer
 -- whole (MyFloat(a,b)) = 
 
+--todo recursive call it -add to a list from right side for 
+-- fraction :: MyFloat->Integer
+-- fraction (MyFloat(a,b)) = 
 
 instance Num MyFloat where
         (+) = myFloatAdd
@@ -50,12 +53,14 @@ instance Num MyFloat where
         (*) = myFloatMult
         negate = myFloatNeg
 
+--todo figure out different exponent methods
 myFloatAdd :: MyFloat -> MyFloat -> MyFloat
 myFloatAdd (MyFloat(m1,e1)) (MyFloat(m2,e2)) = 
         if (e1==e2) then (MyFloat(m1+m2,e1)) else
                 if(e1<e2) then MyFloat(m1,e1) else
                         if (e1>e2) then (MyFloat(m1,e1)) else (MyFloat(m2,e2))
 
+--todo figure out different exponent methods
 myFloatSub :: MyFloat -> MyFloat -> MyFloat
 myFloatSub (MyFloat(m1,e1)) (MyFloat(m2,e2)) =
         if (e1==e2) then (MyFloat(m1-m2,e1)) else
@@ -103,3 +108,21 @@ myFloatLess :: MyFloat -> MyFloat -> Bool
 myFloatLess (MyFloat(exp1,man1)) (MyFloat(exp2,man2)) = 
         if exp1<exp2 then True else
                 if exp1==exp2 && man1<man2 then True else False
+
+
+
+--Question 4)
+
+shuffle :: [a]->[a]->[a]
+shuffle l1 l2 = (head l1):(head l2):l3
+        where l3 = (shuffle (drop 1 l1) (drop 1 l2))
+
+--Question 5)
+
+split :: [a]->Integer->[a]->[a]
+split l1 n = l2, l3
+
+
+
+
+
