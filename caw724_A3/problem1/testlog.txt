@@ -1,0 +1,18 @@
+Test Log:
+
+Prelude> :cd C:\Users\woita\Documents\CMPT 340\CMPT-340\caw724_A3\problem1
+Prelude> :load "problem1.hs"
+[1 of 1] Compiling Main             ( problem1.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> myMap (+3) [1..10]
+[4,5,6,7,8,9,10,11,12,13]
+*Main> take 5 (Main.iterate (+3) 0)
+[3,6,9,12,15]
+*Main> altmap (+3) (+4) [1,1,1,1,1,1,1,1,1,1]
+[4,5,4,5,4,5,4,5,4,5]
+*Main> luhn [1,7,8,4]
+True
+*Main> luhn [1,7,8,5]
+False
+*Main> factorsum 0
+[0,6,496,8128
